@@ -1,2 +1,4 @@
 Django>=4.1,<4.2
 wagtail>=4.0,<4.1
+django-environ==0.11.2
+psycopg2==2.9.9
