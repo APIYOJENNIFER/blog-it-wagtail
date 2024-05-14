@@ -1,7 +1,15 @@
 {% extends "base.html" %}
-
 <!-- load wagtailcore_tags by adding this: -->
-{% load wagtailcore_tags %} {% block body_class %}template-homepage{% endblock%}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- include home page template-->
+{% block body_class%}template-homepage{% endblock%}
 
 <!-- replace everything below with: -->
-{% block content %} {{ page.body|richtext }} {% endblock %}
+{% block content %}
+<div>
+  {% image page.image fill-800x400 %}
+  <h1>{{ page.blog_title|title }}</h1>
+  <hr />
+</div>
+{% endblock %}

@@ -2,14 +2,20 @@
 
 from wagtail.models import Page
 from wagtail.fields import RichTextField
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 
 class HomePage(Page):
-    """Model to define the fields and structure of the Home Page"""
-
-    body = RichTextField(blank=True)
+    image = models.ForeignKey(
+        "wagtailimages.Image", null=True, blank=True, on_delete=models.SET_NULL
+    )
+    blog_title = models.CharField(max_length=255, blank=False, null=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel("body"),
+        MultiFieldPanel(
+            [
+                FieldPanel("image"),
+                FieldPanel("blog_title"),
+            ]
+        )
     ]
