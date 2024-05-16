@@ -10,10 +10,19 @@
 {% block content %}
 
 <h1>{{ page.title }}</h1>
+<p>{{ page.intro|richtext }}</p>
 
 {% for post in blogpages %} {% with post=post.specific %}
 <div>
   {% image post.image fill-320x240 %}
+  <!---->
+  {% with authors=post.authors.all %} {% if authors%}
+  <ul>
+    {% for author in authors %}
+    <li>{{ author.name}}</li>
+    {% endfor%}
+  </ul>
+  {%endif%} {% endwith%}
 
   <p>{{ post.date }}</p>
 

@@ -10,6 +10,14 @@
 {% block content %}
 <h1>{{ page.title}}</h1>
 
+{% with authors=page.authors.all %} {% if authors%}
+<ul>
+  {% for author in authors %}
+  <li>{% image author.author_image fill-50x50 %} {{ author.name}}</li>
+  {% endfor%}
+</ul>
+{%endif%} {% endwith%}
+
 <h3>{{ page.date|date}}</h3>
 
 {% image page.image fill-800x300 %} {{ page.body|richtext}}
