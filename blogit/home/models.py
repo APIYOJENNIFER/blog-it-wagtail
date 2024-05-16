@@ -13,6 +13,12 @@ class HomePage(Page):
         "wagtailimages.Image", null=True, blank=True, on_delete=models.SET_NULL
     )
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request)
+        blogindexpage = self.get_descendants().live().order_by("-first_published_at")
+        context["blogindexpage"] = blogindexpage
+        return context
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [

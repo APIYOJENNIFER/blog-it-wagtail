@@ -13,5 +13,19 @@
   <div class="overlay">
     <h1 class="blog-title">{{ page.title }}</h1>
   </div>
+  {% for post in blogindexpage %}
+
+  <!---->
+  {% with post=post.specific %}
+  <div>
+    {% image post.image fill-320x240 %}
+
+    <p>{{ post.date }}</p>
+
+    <h3><a href="{% pageurl post %}">{{ post.title }}</a></h3>
+
+    <p>{{ post.intro}}</p>
+  </div>
+  {% endwith %} {% endfor %}
 </div>
 {% endblock %}
