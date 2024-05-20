@@ -3,3 +3,4 @@ blogit/env
 __pycache__/
 *.pyc
 .DS_STORE
+media/
