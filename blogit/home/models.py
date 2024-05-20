@@ -1,11 +1,14 @@
-"""Home model"""
+"""Home Page Model"""
+
+from django.db import models
 
 from wagtail.models import Page
-from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 
 class HomePage(Page):
+    """Model defining the structure of home page"""
+
     image = models.ForeignKey(
         "wagtailimages.Image", null=True, blank=True, on_delete=models.SET_NULL
     )
