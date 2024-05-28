@@ -2,6 +2,7 @@
     padding: 20px;
     background-color: #e1f5f2;
     width: 320px;
+    height: 540px;
     box-shadow: 1px 1px 5px gainsboro;
 }
 
@@ -10,12 +11,15 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    list-style: none;
 }
 
 .blog-authors-list {
+    list-style: none;
     margin-right: 10px;
     margin-top: 10px;
     color: #413e41;
+    font-weight: bold;
 }
 
 .blog-authors li::after {
@@ -37,7 +41,7 @@
 }
 
 .blog-post-title a:hover {
-    color: #d5a375;
+    color: #FF9800;
 }
 
 .blog-intro {

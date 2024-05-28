@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load static %}
 <!-- load wagtailcore_tags-->
 {% load wagtailcore_tags wagtailimages_tags %}
 
@@ -8,19 +9,39 @@
 
 <!-- block content -->
 {% block content %}
-<h1>{{ page.title}}</h1>
+<div class="container">
+  <div class="plain-bg"></div>
+  <div class="blog-content">
+    <div class="blog-img-title">
+      {% image page.image fill-800x300 as img %}
+      <img class="blog-img" src="{{img.url}}"/>
+      <div class="blog-overlay">
+        <h1 class="blog-main-title">{{ page.title}}</h1>
+      </div>
+    </div>
+    {% with authors=page.authors.all %} 
+      {% if authors%}
+        <ul class="blog-main-authors">
+          {% for author in authors %}
+          {% image author.author_image width-50 as authimg %}
+            <li class="blog-main-authors-list">
+              <img class="blog-author-img" src="{{authimg.url}}"/> 
+              <p class="blog-author-name">{{ author.name}}</p>
+            </li>
+          {% endfor%}
+        </ul>
+      {%endif%} 
+    {% endwith%}
 
-{% with authors=page.authors.all %} {% if authors%}
-<ul>
-  {% for author in authors %}
-  <li>{% image author.author_image fill-50x50 %} {{ author.name}}</li>
-  {% endfor%}
-</ul>
-{%endif%} {% endwith%}
+    <h3 class="blog-main-date">{{ page.date|date}}</h3>
+    <hr/>
+    <div class="blog-main-body">
+      {{ page.body|richtext}}
+    </div>
 
-<h3>{{ page.date|date}}</h3>
-
-{% image page.image fill-800x300 %} {{ page.body|richtext}}
-
-<p><a href="{{ page.get_parent.url}}">Return to blog page</a></p>
+    <div class="blog-return">
+      <a href="{{ page.get_parent.url}}">Return to blog page</a>
+    </div>
+  </div>
+</div>
 {% endblock %}
