@@ -1,0 +1,15 @@
+[flake8]
+extend-ignore = E203
+include = 
+    home/*.py,
+    search/*.py
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist,
+    home/migrations/*,
+    search/migrations/*
+max-complexity = 10

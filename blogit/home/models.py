@@ -1,7 +1,15 @@
-from django.db import models
+"""Home model"""
 
 from wagtail.models import Page
+from wagtail.fields import RichTextField
+from wagtail.admin.panels import FieldPanel
 
 
 class HomePage(Page):
-    pass
+    """Model to define the fields and structure of the Home Page"""
+
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
