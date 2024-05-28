@@ -1,0 +1,22 @@
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+    {% with post=post.specific %}
+        <div class="blog-card">
+          {% image post.image fill-320x240 %}
+          {% with authors=post.authors.all %}
+              {% if authors%}
+                  <ul class="blog-authors">
+                    {% for author in authors %}
+                      <li class="blog-authors-list">{{ author.name}}</li>
+                    {% endfor%}
+                  </ul>
+              {%endif%} 
+          {% endwith%}
+
+          <p class="blog-date">{{ post.date }}</p>
+          <h3 class="blog-post-title"><a href="{% pageurl post %}">{{ post.title }}</a></h3>
+
+          <p class="blog-intro">{{ post.intro}}</p>
+        </div>
+    {% endwith %} 
