@@ -1,5 +1,5 @@
 .env
-blogit/env
+env/
 __pycache__/
 *.pyc
 .DS_STORE
