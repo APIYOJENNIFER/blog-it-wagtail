@@ -87,11 +87,10 @@ li {
 }
 
 .blog-main-date {
-    color: gray;
+    color: #949694;
     margin-top: 5px;
     margin-left: 20px;
-    font-size:18px;
-    font-style: normal;
+    font-weight:normal;
 }
 
 .blog-main-body {
@@ -105,12 +104,18 @@ li {
     margin: 20px;
 }
 .blog-return a {
-  /* border: none; */
-  color: aliceblue;
+  color: white;
   background-color: #49a193;
   font-size: 14px;
-  /* margin-top: 20px; */
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
+}
+
+.blog-return a:hover {
+    background-color: #FF9800;;
+}
+
+.blog-return a i {
+    margin-right: 10px;
 }

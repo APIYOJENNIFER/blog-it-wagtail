@@ -38,10 +38,15 @@
     <div class="blog-main-body">
       {{ page.body|richtext}}
     </div>
+    <br/>
 
     <div class="blog-return">
-      <a href="{{ page.get_parent.url}}">Return to blog page</a>
+      <a href="{{ page.get_parent.url}}">
+        <i class="fa-solid fa-arrow-left"></i>
+        Return to Blogs
+      </a>
     </div>
+    <br/>
   </div>
 </div>
 {% endblock %}
