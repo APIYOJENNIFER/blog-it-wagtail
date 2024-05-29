@@ -15,16 +15,15 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
   }
   
   .blog-title {
     font-size: 50px;
     color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 20px;
+    bottom: 20px;
   }
 
   .home-cards {
@@ -35,6 +34,16 @@
     align-items: center;
     justify-content:flex-start;
     margin: 60px 80px 40px 80px;
+  }
+
+  .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    left: 0;
+    margin: 20px 20px 0 20px;
+    z-index: 1;
   }
   
   
