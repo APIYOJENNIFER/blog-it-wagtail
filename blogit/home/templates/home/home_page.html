@@ -1,7 +1,17 @@
 {% extends "base.html" %}
-
 <!-- load wagtailcore_tags by adding this: -->
-{% load wagtailcore_tags %} {% block body_class %}template-homepage{% endblock%}
+{% load static %} {% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- include home page template-->
+{% block body_class%}template-homepage{% endblock%}
 
 <!-- replace everything below with: -->
-{% block content %} {{ page.body|richtext }} {% endblock %}
+{% block content %} {% image page.image height-500 as img%}
+
+<div class="container">
+  <img class="header-img" src="{{img.url}}">
+  <div class="overlay">
+    <h1 class="blog-title">{{ page.title }}</h1>
+  </div>
+</div>
+{% endblock %}
