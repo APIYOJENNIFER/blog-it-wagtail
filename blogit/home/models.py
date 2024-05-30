@@ -17,7 +17,9 @@ class HomePage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
-        blogindexpage = BlogPage.objects.all().live().order_by("-first_published_at")
+        blogindexpage = (
+            BlogPage.objects.all().live().order_by("-first_published_at")[:8]
+        )
         context["blogindexpage"] = blogindexpage
         return context
 
