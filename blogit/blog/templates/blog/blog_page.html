@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+<!-- load wagtailcore_tags-->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- add template -->
+{% block body_class%}template-blogpage{% endblock%}
+
+<!-- block content -->
+{% block content %}
+<div class="container">
+  <div class="plain-bg"></div>
+  <div class="blog-content">
+    <div class="blog-img-title">
+      {% image page.image fill-800x300 as img %}
+      <img class="blog-img" src="{{img.url}}"/>
+      <div class="blog-overlay">
+        <h1 class="blog-main-title">{{ page.title}}</h1>
+      </div>
+    </div>
+    {% with authors=page.authors.all %} 
+      {% if authors%}
+        <ul class="blog-main-authors">
+          {% for author in authors %}
+          {% image author.author_image width-50 as authimg %}
+            <li class="blog-main-authors-list">
+              <img class="blog-author-img" src="{{authimg.url}}"/> 
+              <p class="blog-author-name">{{ author.name}}</p>
+            </li>
+          {% endfor%}
+        </ul>
+      {%endif%} 
+    {% endwith%}
+
+    <h3 class="blog-main-date">{{ page.date|date}}</h3>
+    <hr/>
+    <div class="blog-main-body">
+      {{ page.body|richtext}}
+    </div>
+    <br/>
+
+    <div class="blog-return">
+      <a href="{{ page.get_parent.url}}">
+        <i class="fa-solid fa-arrow-left"></i>
+        Return to Blogs
+      </a>
+    </div>
+    <br/>
+  </div>
+</div>
+{% endblock %}

@@ -26,6 +26,7 @@ env = environ.Env()
 # Application definition
 
 INSTALLED_APPS = [
+    "blog",
     "home",
     "search",
     "wagtail.contrib.forms",

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+<!-- load wagtailcore_tags by adding this: -->
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- index page template-->
+{% block body_class%}template-blogindexpage{% endblock %}
+
+<!-- block content -->
+{% block content %}
+<div class="plain-bg"></div>
+<div class="blogs-all">
+  <div class="blog-heading">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.intro|richtext }}</p>
+  </div>
+  <div class="blog-index-cards">
+    {% for post in blogposts %}
+      {% include "includes/blog_card.html" %}
+    {% endfor %}
+  </div>
+
+  <!--Paginator-->
+  <div class="blog-paginator">
+    <div class="blog-prev">
+      {% if blogposts.has_previous %}
+        <li class="page-item">
+          <a href="?page={{ blogposts.previous_page_number }}" class="page-link">
+            <div class="prev">
+              <i class="fa-solid fa-circle-chevron-left"></i>
+              <p>PREV</p>
+            </div>
+          </a>
+        </li>
+      {% endif %}
+    </div>
+    <a class="blog-current"> PAGE {{blogposts.number}} OF {{blogposts.paginator.num_pages}}</a>
+    <div class="blog-next">
+      {% if blogposts.has_next %}
+        <li class="page-item">
+          <a href="?page={{ blogposts.next_page_number }}" class="page-link">
+            <div class="next">
+              <p>NEXT</p>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+          </a>
+        </li>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

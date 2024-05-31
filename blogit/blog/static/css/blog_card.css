@@ -1,0 +1,50 @@
+.blog-card {
+    padding: 20px;
+    background-color: #e1f5f2;
+    width: 320px;
+    height: 540px;
+    box-shadow: 1px 1px 5px gainsboro;
+}
+
+.blog-authors {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.blog-authors-list {
+    list-style: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #413e41;
+    font-weight: bold;
+}
+
+.blog-authors li::after {
+    content: ", ";
+}
+
+.blog-authors li:last-child::after {
+    content: "";
+}
+
+.blog-date {
+    color: #949694;
+    margin-top: 5px;
+}
+
+.blog-post-title {
+    margin-top: 15px;
+    color: #49a193;
+}
+
+.blog-post-title a:hover {
+    color: #FF9800;
+}
+
+.blog-intro {
+    margin-top: 5px;
+    line-height: 1.5;
+}

@@ -1,0 +1,121 @@
+hr {
+    height: 0.5px;
+    background-color: #49a193;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+li {
+    list-style-type:disc;
+    list-style-position: inside;
+    padding: 0;
+}
+
+.plain-bg {
+    background-color: #49a193;
+    width: 100%;
+    height: 400px;
+}
+
+.blog-main-title {
+    font-size: 50px;
+    color: white;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-content {
+    position: relative;
+    background-color: #e1f5f2;
+    border-radius: 5px;
+    max-width: 60%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 40px;
+    top: -15rem;
+    box-shadow: 1px 1px 5px gainsboro;
+}
+
+.blog-img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    display: block;
+}
+
+.blog-author-img {
+    object-fit:cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border:2px solid #49a193;
+    padding: 1px;
+}
+
+.blog-img-title {
+    position: relative;
+    width: 100%;
+  }
+  
+.blog-overlay {
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+.blog-main-authors {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 20px;
+
+}
+
+.blog-main-authors-list {
+    list-style: none;
+    margin-right: 20px;
+    margin-top: 10px;
+    color: #413e41;
+    text-align: center;
+    font-weight: bold;
+}
+
+.blog-main-date {
+    color: #949694;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-weight:normal;
+}
+
+.blog-main-body {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.5;
+}
+
+.blog-return {
+    margin: 20px;
+}
+.blog-return a {
+  color: white;
+  background-color: #49a193;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.blog-return a:hover {
+    background-color: #FF9800;;
+}
+
+.blog-return a i {
+    margin-right: 10px;
+}
