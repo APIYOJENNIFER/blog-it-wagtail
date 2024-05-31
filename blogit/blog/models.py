@@ -7,6 +7,7 @@ from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.snippets.models import register_snippet
 
 from modelcluster.fields import ParentalManyToManyField
+from django.core.paginator import Paginator
 
 
 # Create your models here.
@@ -16,7 +17,10 @@ class BlogIndexPage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
         blogpages = self.get_children().live().order_by("-first_published_at")
-        context["blogpages"] = blogpages
+        paginator = Paginator(blogpages, 10)
+        page_number = request.GET.get("page")
+        blogposts = paginator.get_page(page_number)
+        context["blogposts"] = blogposts
         return context
 
     content_panels = Page.content_panels + [FieldPanel("intro")]
