@@ -4,6 +4,11 @@
     align-items:last baseline;
     justify-content:center;
     color: white;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
 }
 
 .header-logo i {
