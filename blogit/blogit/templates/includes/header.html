@@ -3,13 +3,17 @@
 <div class="header-container">
     <div class="header-logo">
         <i class="fa-solid fa-mug-hot"></i>
-        <h2>BLOG<span>tail</span></h2>
+        <h2>BLOG<span>it</span></h2>
     </div>
     <div class="vertical-divider"></div>
     <div class="header-nav-links">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Blogs</a></li>
+            <li><a href="{% slugurl 'home'%}">Home</a></li>
+            <li><a href="{% slugurl 'blog'%}">Blogs</a></li>
         </ul>
+    </div>
+    <div class="vertical-divider"></div>
+    <div class="btn-subscribe">
+        <a href="">SUBSCRIBE</a>
     </div>
 </div>

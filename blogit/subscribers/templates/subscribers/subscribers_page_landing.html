@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+<!-- load wagtailcore_tags-->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- add template -->
+{% block body_class%}template-subscriberspagelanding{% endblock%}
+
+<!-- block content -->
+{% block content %}
+<div class="container">
+  <div class="plain-bg">
+    <div class="header">
+      {% include "includes/header.html" %}
+    </div>
+  </div>
+  <div class="blog-content">
+        
+  </div>
+</div>
+{% endblock %}

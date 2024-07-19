@@ -10,7 +10,11 @@
 <!-- block content -->
 {% block content %}
 <div class="container">
-  <div class="plain-bg"></div>
+  <div class="plain-bg">
+    <div class="header">
+      {% include "includes/header.html" %}
+    </div>
+  </div>
   <div class="blog-content">
     <div class="blog-img-title">
       {% image page.image fill-800x300 as img %}
